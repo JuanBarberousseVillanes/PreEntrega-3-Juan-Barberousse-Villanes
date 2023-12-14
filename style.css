@@ -80,3 +80,18 @@
     width: 80px;
 }
 
+.parteAbajo{
+    display: flex;
+    flex-direction: row;
+}
+.parteAbajo p {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.parteAbajo .centrado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 55px;
+}
