@@ -82,7 +82,7 @@ const btnFanta = document.getElementById("botonFanta");
 
 
 btnFernet.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="fernet"){
             articulo.cantidad +=1;
         }
@@ -91,7 +91,7 @@ btnFernet.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnRon.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="ron"){
             articulo.cantidad +=1;
         }
@@ -100,7 +100,7 @@ btnRon.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnGin.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="gin"){
             articulo.cantidad +=1;
         }
@@ -109,7 +109,7 @@ btnGin.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnWhisky.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="whisky"){
             articulo.cantidad +=1;
         }
@@ -118,7 +118,7 @@ btnWhisky.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnJagger.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="jagger"){
             articulo.cantidad +=1;
         }
@@ -127,7 +127,7 @@ btnJagger.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnCampari.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="campari"){
             articulo.cantidad +=1;
         }
@@ -137,7 +137,7 @@ btnCampari.addEventListener('click',function(){
 })
 
 btnVodka.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="vodka"){
             articulo.cantidad +=1;
         }
@@ -146,7 +146,7 @@ btnVodka.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnCerveza.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="cerveza"){
             articulo.cantidad +=1;
         }
@@ -156,7 +156,7 @@ btnCerveza.addEventListener('click',function(){
 })
 
 btnCoca.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="coca cola"){
             articulo.cantidad +=1;
         }
@@ -165,7 +165,7 @@ btnCoca.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnSprite.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="sprite"){
             articulo.cantidad +=1;
         }
@@ -174,7 +174,7 @@ btnSprite.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnRedBull.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="red bull"){
             articulo.cantidad +=1;
         }
@@ -183,7 +183,7 @@ btnRedBull.addEventListener('click',function(){
     mostrarCarrito();
 })
 btnFanta.addEventListener('click',function(){
-    for (articulo of carritoActual.bebidas){
+    for (let articulo of carritoActual.bebidas){
         if(articulo.nombre.toLowerCase()=="fanta"){
             articulo.cantidad +=1;
         }
@@ -212,7 +212,7 @@ function mostrarCarrito (){
     });
     const precioTotal = document.getElementById("precioTotal");
     let precioCarrito =0;
-    for (bebida of carritoActual.bebidas){
+    for (let bebida of carritoActual.bebidas){
         precioCarrito+= (bebida.cantidad)*(bebida.precio);
     }
     precioTotal.textContent = "Precio Total del Carrito: $" + precioCarrito;
