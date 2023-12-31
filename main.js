@@ -11,7 +11,7 @@ let carritoActual = new Carrito();
 
 function carga(){
     let carritoLocalStorage = localStorage.getItem("Carrito");
-    if (carritoLocalStorage === null) {
+    if (carritoLocalStorage == "{\"bebidas\":[]}") {
         fetch("./bebidas.json")
         .then(response => response.json())
         .then(data => {
@@ -455,5 +455,6 @@ function vaciarCampos(){
     document.getElementById("cvv").value="";
 }
 
+carga();
 descargarLocalStorage();
 mostrarCarrito();
