@@ -11,7 +11,7 @@ let carritoActual = new Carrito();
 
 function carga() {
     let carritoLocalStorage = localStorage.getItem("Carrito");
-    if (carritoLocalStorage == "{\"bebidas\":[]}" ) {
+    if (localStorage.length===0) {
         fetch("./bebidas.json")
             .then(response => response.json())
             .then(data => {
