@@ -32,12 +32,16 @@
       <div id="compra">
         <div class="compraDivs">
           <label for="numeroTarjeta">Número de Tarjeta:</label>
-          <input type="number" id="numeroTarjeta" name="numeroTarjeta" placeholder="Ingrese el número de tarjeta"
+          <input type="number" id="numeroTarjeta" name="numeroTarjeta" placeholder="Ingrese el número de tarjeta (16 digitos)"
             required>
         </div>
         <div class="compraDivs">
-          <label for="fechaVencimiento">Fecha de Vencimiento:</label>
-          <input type="text" id="fechaVencimiento" name="fechaVencimiento" placeholder="MM/AA" required>
+          <label for="mesVencimiento">Mes de vencimiento:</label>
+          <input type="text" id="mesVencimiento" name="mesVencimiento" placeholder="MM" required>
+        </div>
+        <div class="compraDivs">
+          <label for="anioVencimiento">Año de vencimiento:</label>
+          <input type="text" id="anioVencimiento" name="anioVencimiento" placeholder="YYYY" required>
         </div>
         <div class="compraDivs">
           <label for="nombreTitular">Nombre del Titular:</label>
@@ -46,7 +50,7 @@
         </div>
         <div class="compraDivs">
           <label for="cvv">CVV:</label>
-          <input type="number" id="cvv" name="cvv" placeholder="Ingrese el CVV" required>
+          <input type="number" id="cvv" name="cvv" placeholder="Ingrese el CVV (3 digitos)" required>
         </div>
         <div class="compraDivs" id="botonCompra">
           <button type="button" class="btn btn-primary" id="cancelarCompra">Cancelar</button>

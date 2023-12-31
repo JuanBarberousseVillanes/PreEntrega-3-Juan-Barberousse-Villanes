@@ -332,13 +332,68 @@ btnCancelarCompra.addEventListener('click',function(){
 
 btnFinalizarCompra.addEventListener('click',function(){
     let num = document.getElementById("numeroTarjeta").value;
-    let fechaVenc = document.getElementById("fechaVencimiento").value;
+    let mesVenc = document.getElementById("mesVencimiento").value;
+    let anioVenc = document.getElementById("anioVencimiento").value;
     let nombreTitular = document.getElementById("nombreTitular").value;
     let cvv = document.getElementById("cvv").value;
 
-    if(num=="" || fechaVenc=="" || nombreTitular=="" || cvv==""){
+    if(num=="" || mesVenc=="" || anioVenc=="" || nombreTitular=="" || cvv==""){
         Toastify({
             text: "Debes rellenar todos los campos",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, rgba(255, 0, 0, 0.856), rgba(255, 0, 0, 0.856))",
+            },
+            offset: {
+                y: "6rem"
+            },
+            onClick: function () { }
+        }).showToast();
+    }else if(num.length!=16){
+        Toastify({
+            text: "Ingrese un numero de tarjeta valido",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, rgba(255, 0, 0, 0.856), rgba(255, 0, 0, 0.856))",
+            },
+            offset: {
+                y: "6rem"
+            },
+            onClick: function () { }
+        }).showToast();
+    }else if(mesVenc.length!=2 || mesVenc<1 || mesVenc>12){
+        Toastify({
+            text: "Ingrese un mes de vencimiento valido",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, rgba(255, 0, 0, 0.856), rgba(255, 0, 0, 0.856))",
+            },
+            offset: {
+                y: "6rem"
+            },
+            onClick: function () { }
+        }).showToast();
+    }else if(anioVenc.length!=4 || anioVenc<2023){
+        Toastify({
+            text: "Ingrese un año de vencimiento valido",
             duration: 3000,
             destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
@@ -387,10 +442,18 @@ btnFinalizarCompra.addEventListener('click',function(){
         })
         cargarLocalStorage();
         mostrarCarrito();
+        vaciarCampos();
     }
 
 })
 
+function vaciarCampos(){
+    document.getElementById("numeroTarjeta").value="";
+    document.getElementById("mesVencimiento").value="";
+    document.getElementById("anioVencimiento").value="";
+    document.getElementById("nombreTitular").value="";
+    document.getElementById("cvv").value="";
+}
 
 descargarLocalStorage();
 mostrarCarrito();
