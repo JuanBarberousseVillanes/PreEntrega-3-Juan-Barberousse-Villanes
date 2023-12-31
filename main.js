@@ -9,14 +9,14 @@ class Carrito {
 let carritoActual = new Carrito();
 
 
-function carga(){
+function carga() {
     let carritoLocalStorage = localStorage.getItem("Carrito");
-    if (carritoLocalStorage == "{\"bebidas\":[]}") {
+    if (carritoLocalStorage == "{\"bebidas\":[]}" ) {
         fetch("./bebidas.json")
-        .then(response => response.json())
-        .then(data => {
-            carritoActual.bebidas = data;
-        })
+            .then(response => response.json())
+            .then(data => {
+                carritoActual.bebidas = data;
+            })
     } else {
         let carritoObjet = JSON.parse(carritoLocalStorage);
         carritoActual = carritoObjet;
@@ -324,20 +324,20 @@ function prenderBotones() {
 const btnCancelarCompra = document.getElementById("cancelarCompra");
 const btnFinalizarCompra = document.getElementById("finalizarCompra");
 
-btnCancelarCompra.addEventListener('click',function(){
+btnCancelarCompra.addEventListener('click', function () {
     let elemOculto = document.getElementById("mainAux");
     elemOculto.style.display = "none";
     prenderBotones();
 })
 
-btnFinalizarCompra.addEventListener('click',function(){
+btnFinalizarCompra.addEventListener('click', function () {
     let num = document.getElementById("numeroTarjeta").value;
     let mesVenc = document.getElementById("mesVencimiento").value;
     let anioVenc = document.getElementById("anioVencimiento").value;
     let nombreTitular = document.getElementById("nombreTitular").value;
     let cvv = document.getElementById("cvv").value;
 
-    if(num=="" || mesVenc=="" || anioVenc=="" || nombreTitular=="" || cvv==""){
+    if (num == "" || mesVenc == "" || anioVenc == "" || nombreTitular == "" || cvv == "") {
         Toastify({
             text: "Debes rellenar todos los campos",
             duration: 3000,
@@ -355,7 +355,7 @@ btnFinalizarCompra.addEventListener('click',function(){
             },
             onClick: function () { }
         }).showToast();
-    }else if(num.length!=16){
+    } else if (num.length != 16) {
         Toastify({
             text: "Ingrese un numero de tarjeta valido",
             duration: 3000,
@@ -373,7 +373,7 @@ btnFinalizarCompra.addEventListener('click',function(){
             },
             onClick: function () { }
         }).showToast();
-    }else if(mesVenc.length!=2 || mesVenc<1 || mesVenc>12){
+    } else if (mesVenc.length != 2 || mesVenc < 1 || mesVenc > 12) {
         Toastify({
             text: "Ingrese un mes de vencimiento valido",
             duration: 3000,
@@ -391,7 +391,7 @@ btnFinalizarCompra.addEventListener('click',function(){
             },
             onClick: function () { }
         }).showToast();
-    }else if(anioVenc.length!=4 || anioVenc<2023){
+    } else if (anioVenc.length != 4 || anioVenc < 2023) {
         Toastify({
             text: "Ingrese un año de vencimiento valido",
             duration: 3000,
@@ -409,7 +409,7 @@ btnFinalizarCompra.addEventListener('click',function(){
             },
             onClick: function () { }
         }).showToast();
-    }else if(cvv.length!=3){
+    } else if (cvv.length != 3) {
         Toastify({
             text: "Ingrese un cvv valido",
             duration: 3000,
@@ -427,7 +427,7 @@ btnFinalizarCompra.addEventListener('click',function(){
             },
             onClick: function () { }
         }).showToast();
-    }else{
+    } else {
         let elemOculto = document.getElementById("mainAux");
         elemOculto.style.display = "none";
         prenderBotones();
@@ -447,13 +447,14 @@ btnFinalizarCompra.addEventListener('click',function(){
 
 })
 
-function vaciarCampos(){
-    document.getElementById("numeroTarjeta").value="";
-    document.getElementById("mesVencimiento").value="";
-    document.getElementById("anioVencimiento").value="";
-    document.getElementById("nombreTitular").value="";
-    document.getElementById("cvv").value="";
+function vaciarCampos() {
+    document.getElementById("numeroTarjeta").value = "";
+    document.getElementById("mesVencimiento").value = "";
+    document.getElementById("anioVencimiento").value = "";
+    document.getElementById("nombreTitular").value = "";
+    document.getElementById("cvv").value = "";
 }
+
 
 carga();
 descargarLocalStorage();
